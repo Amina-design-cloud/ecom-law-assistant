@@ -1,0 +1,41 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f8ff;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+h1 {
+  color: #003366;
+}
+
+.btn {
+  display: block;
+  margin: 15px auto;
+  padding: 15px;
+  background-color: #0077cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  width: 80%;
+}
+
+.btn:hover {
+  background-color: #005fa3;
+}
+
+.author {
+  margin-top: 30px;
+  font-size: 14px;
+  color: gray;
+}
