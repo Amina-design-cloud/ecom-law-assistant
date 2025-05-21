@@ -14,31 +14,45 @@
   <script>
     const questions = {
       q1: {
-        text: "是否有追蹤編號或寄件證明？",
+        text: "是否有追蹤編號或寄件紀錄？",
         options: [
           { text: "是", next: "q2" },
-          { text: "否", result: "請聯繫平台或賣家協尋。" }
+          { text: "否", result: "請與平台或賣家聯繫協尋。" }
         ]
       },
       q2: {
         text: "物流是否由賣家安排？",
         options: [
-          { text: "是", result: "風險由賣家負責（民法第373條）" },
-          { text: "否", next: "q3" }
-        ]
-      },
-      q3: {
-        text: "是否為貨到付款但未取貨？",
-        options: [
-          { text: "是", result: "雖無法律罰責，但賣家可拒絕再交易。" },
+          { text: "是", next: "q3" },
           { text: "否", next: "q4" }
         ]
       },
-      q4: {
-        text: "你已退貨但賣家說沒收到？",
+      q3: {
+        text: "商品在運送過程中是否毀損？",
         options: [
-          { text: "有寄件證明", result: "賣家仍須退款，請提供證據。" },
-          { text: "無寄件證明", result: "下次應使用掛號或簽收寄件。" }
+          { text: "是", result: "由賣家負責處理或理賠（民法第373條）" },
+          { text: "否", next: "q5" }
+        ]
+      },
+      q4: {
+        text: "是否為你指定的物流？",
+        options: [
+          { text: "是", result: "風險可能由買方承擔，應與物流業者協調。" },
+          { text: "否", next: "q5" }
+        ]
+      },
+      q5: {
+        text: "是否因延遲配送而錯過鑑賞期？",
+        options: [
+          { text: "是", result: "可主張退貨期順延，賣家不得拒收（行政解釋）" },
+          { text: "否", next: "q6" }
+        ]
+      },
+      q6: {
+        text: "商品退回後，賣家是否拒收或不退款？",
+        options: [
+          { text: "是", result: "建議提供寄件證明並提出申訴。" },
+          { text: "否", result: "流程可視為已正常完成。" }
         ]
       }
     };
