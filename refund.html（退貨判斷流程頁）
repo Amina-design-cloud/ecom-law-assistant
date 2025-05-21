@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>退貨判斷助手</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>退貨與退款判斷</h1>
+    <div id="qa"></div>
+    <a href="index.html" class="btn">回首頁</a>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    const questions = {
+      q1: {
+        text: "是否在收到商品 7 天內提出退貨？",
+        options: [
+          { text: "是", next: "q2" },
+          { text: "否", result: "超過法定期限，賣家可拒絕退貨。（消保法第19條）" }
+        ]
+      },
+      q2: {
+        text: "商品是否已使用、拆封或損壞？",
+        options: [
+          { text: "是", next: "q3" },
+          { text: "否", next: "q4" }
+        ]
+      },
+      q3: {
+        text: "商品是否屬於不得退貨項目？（如貼身衣物、客製化商品）",
+        options: [
+          { text: "是", result: "此商品屬於例外情形，不可退貨。（合理例外情形適用準則）" },
+          { text: "否", result: "你有退貨權，建議主張。（消保法第19條）" }
+        ]
+      },
+      q4: {
+        text: "購買平台是否為台灣境內賣家？",
+        options: [
+          { text: "是", next: "q5" },
+          { text: "否", result: "可能不受台灣消保法保護，建議透過平台客服處理。" }
+        ]
+      },
+      q5: {
+        text: "賣家是否已在 15 日內退款？",
+        options: [
+          { text: "是", result: "流程正常完成。" },
+          { text: "否", result: "賣家違反通訊交易規定，可申訴。（消保法第19條）" }
+        ]
+      }
+    };
+    renderQuestion("qa", questions, "q1");
+  </script>
+</body>
+</html>
