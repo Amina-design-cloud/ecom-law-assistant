@@ -1,45 +1,44 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>物流與責任判斷</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>物流與責任歸屬判斷</h1>
+    <h1>物流與責任判斷</h1>
     <div id="qa"></div>
-    <a href="index.html" class="btn">回首頁</a>
   </div>
   <script src="script.js"></script>
   <script>
     const questions = {
       q1: {
-        text: "你是否有包裹追蹤編號或證據？",
+        text: "是否有追蹤編號或寄件證明？",
         options: [
           { text: "是", next: "q2" },
-          { text: "否", result: "請先與賣家或物流聯繫協尋包裹。" }
+          { text: "否", result: "請聯繫平台或賣家協尋。" }
         ]
       },
       q2: {
-        text: "物流是由賣家安排的嗎？",
+        text: "物流是否由賣家安排？",
         options: [
-          { text: "是", result: "依《民法》第373條，風險仍由賣家負責。" },
+          { text: "是", result: "風險由賣家負責（民法第373條）" },
           { text: "否", next: "q3" }
         ]
       },
       q3: {
-        text: "你是否貨到付款卻未取貨？",
+        text: "是否為貨到付款但未取貨？",
         options: [
-          { text: "是", result: "法律不強制賠償，但賣家可拒絕你再次下單。" },
+          { text: "是", result: "雖無法律罰責，但賣家可拒絕再交易。" },
           { text: "否", next: "q4" }
         ]
       },
       q4: {
-        text: "你已寄回退貨商品但賣家說沒收到？",
+        text: "你已退貨但賣家說沒收到？",
         options: [
-          { text: "有寄件憑證", result: "可主張已完成退貨，建議保留寄件證據。" },
-          { text: "無寄件憑證", result: "較難舉證，建議未來用掛號或有簽收方式寄送。" }
+          { text: "有寄件證明", result: "賣家仍須退款，請提供證據。" },
+          { text: "無寄件證明", result: "下次應使用掛號或簽收寄件。" }
         ]
       }
     };
