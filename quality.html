@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>商品與假貨判斷</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>商品品質與假貨判斷</h1>
+    <h1>商品與假貨判斷</h1>
     <div id="qa"></div>
-    <a href="index.html" class="btn">回首頁</a>
   </div>
   <script src="script.js"></script>
   <script>
@@ -17,12 +16,33 @@
       q1: {
         text: "商品是否與網站描述不符？",
         options: [
-          { text: "是", result: "你可主張契約不完全履行，要求換貨或退貨。（民法第227條）" },
+          { text: "是", result: "可主張契約不完全履行（民法第227條）" },
           { text: "否", next: "q2" }
         ]
       },
       q2: {
         text: "商品是否有明顯瑕疵或功能異常？",
         options: [
-          { text: "是", result: "你可依《消保法》第7條要求換貨或退款。" },
-          { text: "否", next: "q3
+          { text: "是", result: "可要求換貨、退貨或價金減少（消保法第7條）" },
+          { text: "否", next: "q3" }
+        ]
+      },
+      q3: {
+        text: "是否懷疑為仿冒品（假貨）？",
+        options: [
+          { text: "是", next: "q4" },
+          { text: "否", result: "建議與平台或賣家溝通處理。" }
+        ]
+      },
+      q4: {
+        text: "是否能提供仿冒證據（圖片、品牌對照）？",
+        options: [
+          { text: "是", result: "可報警或向公平會申訴（公平交易法第21條）" },
+          { text: "否", result: "請先蒐集證據以便申訴或提告。" }
+        ]
+      }
+    };
+    renderQuestion("qa", questions, "q1");
+  </script>
+</body>
+</html>
