@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <title>退貨判斷助手</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>退貨與退款判斷</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <h1>退貨與退款判斷</h1>
     <div id="qa"></div>
-    <a href="index.html" class="btn">回首頁</a>
   </div>
   <script src="script.js"></script>
   <script>
@@ -22,31 +21,31 @@
         ]
       },
       q2: {
-        text: "商品是否已使用、拆封或損壞？",
+        text: "商品是否已拆封、使用或損壞？",
         options: [
           { text: "是", next: "q3" },
           { text: "否", next: "q4" }
         ]
       },
       q3: {
-        text: "商品是否屬於不得退貨項目？（如貼身衣物、客製化商品）",
+        text: "商品是否屬於不得退貨的例外項目？",
         options: [
-          { text: "是", result: "此商品屬於例外情形，不可退貨。（合理例外情形適用準則）" },
-          { text: "否", result: "你有退貨權，建議主張。（消保法第19條）" }
+          { text: "是", result: "此商品不適用 7 日退貨權。（合理例外情形準則）" },
+          { text: "否", result: "你仍可主張退貨權。（消保法第19條）" }
         ]
       },
       q4: {
-        text: "購買平台是否為台灣境內賣家？",
+        text: "是否由台灣境內業者販售？",
         options: [
           { text: "是", next: "q5" },
-          { text: "否", result: "可能不受台灣消保法保護，建議透過平台客服處理。" }
+          { text: "否", result: "可能不受消保法保障，建議使用平台機制交涉。" }
         ]
       },
       q5: {
-        text: "賣家是否已在 15 日內退款？",
+        text: "賣家是否在 15 日內完成退款？",
         options: [
-          { text: "是", result: "流程正常完成。" },
-          { text: "否", result: "賣家違反通訊交易規定，可申訴。（消保法第19條）" }
+          { text: "是", result: "流程完成。" },
+          { text: "否", result: "可依通訊交易規定向賣家或消保官申訴。" }
         ]
       }
     };
@@ -54,3 +53,4 @@
   </script>
 </body>
 </html>
+
