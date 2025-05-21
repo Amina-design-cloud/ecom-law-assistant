@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>退貨與退款判斷</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
@@ -13,50 +13,33 @@
   <script src="script.js"></script>
   <script>
     const questions = {
-      q1: {
-        text: "是否在收到商品 7 天內提出退貨？",
-        options: [
-          { text: "是", next: "q2" },
-          { text: "否", result: "超過法定期限，賣家可拒絕退貨。（消保法第19條）" }
-        ]
-      },
-      q2: {
-        text: "商品是否已拆封、使用或損壞？",
-        options: [
-          { text: "是", next: "q3" },
-          { text: "否", next: "q4" }
-        ]
-      },
-      q3: {
-        text: "是否屬於不得退貨的例外項目（如貼身衣物、客製化）？",
-        options: [
-          { text: "是", result: "此商品不適用 7 日退貨權。（合理例外情形準則）" },
-          { text: "否", next: "q4" }
-        ]
-      },
-      q4: {
-        text: "是否由台灣境內合法業者販售？",
-        options: [
-          { text: "是", next: "q5" },
-          { text: "否", result: "可能不受消保法保障，建議用平台機制處理。" }
-        ]
-      },
-      q5: {
-        text: "退貨時是否有附上發票或訂單證明？",
-        options: [
-          { text: "有", next: "q6" },
-          { text: "沒有", result: "建議附上證明以利處理，否則可能被拒收。" }
-        ]
-      },
-      q6: {
-        text: "賣家是否於 15 日內完成退款？",
-        options: [
-          { text: "是", result: "流程正常完成。" },
-          { text: "否", result: "賣家違反通訊交易規定，可向平台或消保官申訴。" }
-        ]
-      }
+      q1: { text: "是否在收到商品 7 天內提出退貨？", options: [
+        { text: "是", next: "q2" },
+        { text: "否", result: "超過期限，賣家可拒絕退貨。" }
+      ]},
+      q2: { text: "商品是否已拆封、使用或損壞？", options: [
+        { text: "是", next: "q3" },
+        { text: "否", next: "q4" }
+      ]},
+      q3: { text: "商品是否屬於合理除外（如貼身衣物、客製化）？", options: [
+        { text: "是", result: "不適用 7 天無條件退貨。" },
+        { text: "否", next: "q4" }
+      ]},
+      q4: { text: "是否由台灣境內合法業者販售？", options: [
+        { text: "是", next: "q5" },
+        { text: "否", result: "不一定適用消保法，建議平台內處理。" }
+      ]},
+      q5: { text: "是否有附上發票或訂單證明？", options: [
+        { text: "是", next: "q6" },
+        { text: "否", result: "無法舉證，賣家可能拒退。" }
+      ]},
+      q6: { text: "賣家是否於 15 日內完成退款？", options: [
+        { text: "是", result: "流程完成，交易順利結束。" },
+        { text: "否", result: "可依通訊交易規定申訴賣家。" }
+      ]},
     };
     renderQuestion("qa", questions, "q1");
   </script>
 </body>
 </html>
+
