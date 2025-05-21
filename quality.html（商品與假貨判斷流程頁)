@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>商品與假貨判斷</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>商品品質與假貨判斷</h1>
+    <div id="qa"></div>
+    <a href="index.html" class="btn">回首頁</a>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    const questions = {
+      q1: {
+        text: "商品是否與網站描述不符？",
+        options: [
+          { text: "是", result: "你可主張契約不完全履行，要求換貨或退貨。（民法第227條）" },
+          { text: "否", next: "q2" }
+        ]
+      },
+      q2: {
+        text: "商品是否有明顯瑕疵或功能異常？",
+        options: [
+          { text: "是", result: "你可依《消保法》第7條要求換貨或退款。" },
+          { text: "否", next: "q3
