@@ -2,43 +2,43 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <title>物流與責任判斷</title>
+  <title>商品與假貨判斷</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>物流與責任判斷</h1>
+    <h1>商品與假貨判斷</h1>
     <div id="qa"></div>
   </div>
   <script src="script.js"></script>
   <script>
     const questions = {
       q1: {
-        text: "是否有追蹤編號或寄件紀錄？",
+        text: "商品是否與網站描述不符？",
         options: [
-          { text: "是", next: "q2" },
-          { text: "否", result: "請儘速與平台或賣家聯繫協尋。" }
+          { text: "是", result: "可主張契約不完全履行（民法第227條）" },
+          { text: "否", next: "q2" }
         ]
       },
       q2: {
-        text: "物流是否由賣家安排？",
+        text: "商品是否有明顯瑕疵或功能異常？",
         options: [
-          { text: "是", result: "風險由賣家負責（民法第373條）" },
+          { text: "是", result: "可要求換貨或價金減少（消保法第7條）" },
           { text: "否", next: "q3" }
         ]
       },
       q3: {
-        text: "是否貨到付款但未取貨？",
+        text: "是否懷疑為仿冒品（假貨）？",
         options: [
-          { text: "是", result: "雖無法罰錢，但賣家可拒絕再交易。" },
-          { text: "否", next: "q4" }
+          { text: "是", next: "q4" },
+          { text: "否", result: "建議與賣家或平台溝通處理。" }
         ]
       },
       q4: {
-        text: "你已寄回退貨商品，但賣家說沒收到？",
+        text: "是否有仿冒證據（圖片、來源比對）？",
         options: [
-          { text: "有寄件證明", result: "賣家應退款，請出示證據。" },
-          { text: "無寄件證明", result: "建議下次使用掛號或簽收物流。" }
+          { text: "是", result: "可報警或向公平會申訴（公平交易法第21條）" },
+          { text: "否", result: "請先蒐集證據以利申訴。" }
         ]
       }
     };
@@ -46,3 +46,4 @@
   </script>
 </body>
 </html>
+
